@@ -2,6 +2,7 @@ package net.devquip.framecaster;
 
 import org.lwjgl.opengl.Display;
 
+import net.devquip.framecaster.calculs.Calculs;
 import net.devquip.framecaster.test.ClassPanelTest;
 import net.devquip.framecaster.windows.JFrameWindows;
 import net.devquip.framecaster.windows.LWJGLWindows;
@@ -63,9 +64,10 @@ public class MainLib {
 	}
 	
 	public static void main(String[] args) {
-	//	LWJGLWindows.createLwjglWindows(700, 700, "test");
+	//	LWJGLWindows.createLwjglWindows(700, 700, "test", true);
 		MainLib m = new MainLib();
 	//	m.start();
-		JFrameWindows.createLWJGLWindows(700, 700, "test", new ClassPanelTest(), true, "main.png");
+		JFrameWindows.createJFrameWindows(700, 700, "test", new ClassPanelTest(), true);
+		Calculs.calculMul3(2, 5, 4);
 	}
 }

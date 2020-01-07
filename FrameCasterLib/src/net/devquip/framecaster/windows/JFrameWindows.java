@@ -1,18 +1,18 @@
 package net.devquip.framecaster.windows;
 
 import java.awt.Container;
-import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public class JFrameWindows extends JFrame {
 	
-	public static void createLWJGLWindows(int width, int height, String title, Container classPanel, boolean resizableFrame, String urlP) {
+	public static void createJFrameWindows(int width, int height, String title, Container classPanel, boolean resizableFrame/*, String urlP*/) {
 		
 		JFrame mainFrame = new JFrame();
 		ImageIcon icon;
-		icon = new ImageIcon(urlP);
+		icon = new ImageIcon("/net/devquip/framecaster/res/main.png");
 		
 		mainFrame.setTitle(title);
 		mainFrame.setSize(width, height);
