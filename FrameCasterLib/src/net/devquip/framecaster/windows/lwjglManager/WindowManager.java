@@ -57,12 +57,20 @@ public class WindowManager {
 				frameBeforeTime += frameNS;
 			}
 			
-			SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm");
+			SimpleDateFormat sdf = new java.text.SimpleDateFormat("HH:mm:ss");
 			String texte_date = sdf.format(new Date());
 			
 			if(System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-				System.out.println("[" + texte_date + "] " + ticks + " ticks, " + frames + " fps");
+				System.out.println("[" + texte_date + "]" + " [INFO] " + ticks + " ticks, " + frames + " fps");
+				File logs = new File("/net/devquip/framecaster/logs/logs.txt");
+				if(!logs.exists()) {
+					try {
+						logs.createNewFile();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
 				frames = 0;
 				ticks = 0;
 			}
